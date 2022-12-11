@@ -12,7 +12,7 @@ class SanPhams(db.Model):
     MaSanPham = db.Column(db.Integer, primary_key=True)
     TenSanPham = db.Column(db.String(128))
     Thumbnail = db.Column(db.String(128))
-    MaLoaiSanPham = db.Column(db.Integer, db.ForeignKey('LoaiSanPhams.MaLoaiSanPham'))
+    MaLoaiSanPham = db.Column(db.Integer, db.ForeignKey('LoaiSanPhams.MaLoaiSanPham', ondelete = "CASCADE"))
 
 
 class ChiTietSanPhams(db.Model):
