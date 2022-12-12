@@ -45,7 +45,7 @@ class HoaDons(db.Model):
     MaKhachHang = db.Column(db.Integer, db.ForeignKey('KhachHangs.MaKhachHang'))
     DiaChiNhanHang = db.Column(db.String(128))
     HinhThucThanhToan = db.Column(db.String(128))
-    NgayThanhToan = db.Column(db.Date) #khong chac lam co kieu db.Date ko nha
+    NgayThanhToan = db.Column(db.Date) #khong chac lam co kieu db.Date ko nha, hoac la dung DateTime
 
 
 class KhachHangs(db.Model):
