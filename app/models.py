@@ -1,4 +1,5 @@
 from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class LoaiSanPhams(db.Model):
@@ -12,7 +13,8 @@ class SanPhams(db.Model):
     MaSanPham = db.Column(db.Integer, primary_key=True)
     TenSanPham = db.Column(db.String(128))
     Thumbnail = db.Column(db.String(128))
-    MaLoaiSanPham = db.Column(db.Integer, db.ForeignKey('LoaiSanPhams.MaLoaiSanPham'))
+    MaLoaiSanPham = db.Column(db.Integer, db.ForeignKey('LoaiSanPhams.MaLoaiSanPham', ondelete = "CASCADE"))
+    ChitietSanPham = db.relationship("ChiTietSanPhams",backref='chitiet', lazy='dynamic')
 
 
 class ChiTietSanPhams(db.Model):

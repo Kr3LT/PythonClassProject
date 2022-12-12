@@ -1,5 +1,6 @@
 from app import app
 from app import db
+from flask import Flask
 from app.models import HoaDons, ChiTietHoaDons, ChiTietSanPhams, LoaiSanPhams, SanPhams, KhachHangs
 
 
